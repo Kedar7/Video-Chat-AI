@@ -1,0 +1,260 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 40% 98%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221.2 83.2% 53.3%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 210 40% 98%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221.2 83.2% 53.3%;
+  }
+}
+
+@layer utilities {
+  .flex-center {
+    @apply flex justify-center items-center;
+  }
+
+  .flex-between {
+    @apply flex justify-between items-center;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-[#212529];
+  }
+  
+  /* Override text colors for better visibility */
+  h1, h2, h3, h4, h5, h6, p, span, div, button, a {
+    @apply text-[#212529];
+  }
+
+  /* Specific overrides for different text elements */
+  .text-muted {
+    @apply text-[#495057];
+  }
+
+  .text-primary {
+    @apply text-[#0D6EFD];
+  }
+
+  .text-secondary {
+    @apply text-[#6C757D];
+  }
+
+  /* Button text colors */
+  button:not(.cl-formButtonPrimary) {
+    @apply text-[#212529];
+  }
+
+  /* More specific override for primary button text color */
+  .bg-blue-1 button,
+  button.bg-blue-1 {
+    color: #FFFFFF !important;
+  }
+
+  /* Link colors */
+  a:not(.cl-footerActionLink) {
+    @apply text-[#0D6EFD] hover:text-[#0A58CA];
+  }
+}
+
+.glassmorphism {
+  background: rgba(248, 249, 250, 0.9);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid rgba(222, 226, 230, 0.8);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.str-video {
+  height: 100%;
+  width: 100%;
+}
+
+/* ==== clerk class override ===== */
+.cl-rootBox {
+  @apply bg-[#F8F9FA];
+}
+
+.cl-card {
+  @apply bg-white border border-[#DEE2E6] shadow-lg;
+}
+
+.cl-headerTitle {
+  @apply text-[#212529] font-semibold;
+}
+
+.cl-headerSubtitle {
+  @apply text-[#495057];
+}
+
+.cl-formFieldInput {
+  @apply bg-white border border-[#DEE2E6] text-[#212529];
+}
+
+.cl-formButtonPrimary {
+  @apply bg-[#0D6EFD] hover:bg-[#0A58CA] text-white;
+}
+
+.cl-footerActionLink {
+  @apply text-[#0D6EFD] hover:text-[#0A58CA];
+}
+
+.cl-socialButtonsBlockButton {
+  @apply border border-[#DEE2E6] bg-white text-[#212529] hover:bg-[#F8F9FA];
+}
+
+.cl-dividerLine {
+  @apply bg-[#DEE2E6];
+}
+
+.cl-dividerText {
+  @apply text-[#495057] bg-white;
+}
+
+/* animation */
+.show-block {
+  animation: show 0.7s forwards linear;
+  animation-timing-function: ease-in;
+}
+
+@keyframes show {
+  0% {
+    width: 0%;
+  }
+
+  100% {
+    width: 100%;
+  }
+}
+
+/* Stream.io light theme overrides */
+.str-video, .str-video__controls, .str-ui__modal-content {
+  background-color: #F8F9FA !important;
+  color: #FFFFFF !important;
+}
+
+/* More specific overrides for lists and items within modals/device settings */
+.str-video__device-settings__list, .str-ui__modal-content__container, .str-ui__selectable-list__item {
+    background-color: #FFFFFF !important;
+    color: #FFFFFF !important;
+    border-color: #DEE2E6 !important;
+}
+
+.str-ui__selectable-list__item:hover {
+    background-color: #E9ECEF !important;
+}
+
+/* Even more specific overrides for text elements within Stream.io components */
+.str-video p, .str-video span, .str-video div, .str-video label, .str-ui__modal-content p, .str-ui__modal-content span, .str-ui__modal-content div, .str-ui__modal-content label, .str-ui__selectable-list__item p, .str-ui__selectable-list__item span, .str-ui__selectable-list__item div, .str-ui__selectable-list__item label {
+    color: #FFFFFF !important;
+}
+
+.str-video__control-button, .str-ui__button {
+  background-color: #FFFFFF !important;
+  color: #FFFFFF !important;
+  border-color: #DEE2E6 !important;
+}
+
+.str-video__control-button:hover, .str-ui__button:hover {
+  background-color: #E9ECEF !important;
+}
+
+.str-video__label, .str-ui__label {
+  color: #FFFFFF !important;
+}
+
+.str-video__input, .str-ui__input {
+  background-color: #FFFFFF !important;
+  color: #FFFFFF !important;
+  border-color: #DEE2E6 !important;
+}
+
+.str-video__select, .str-ui__select {
+  background-color: #FFFFFF !important;
+  color: #FFFFFF !important;
+  border-color: #DEE2E6 !important;
+}
+
+.str-video__option, .str-ui__option {
+    color: #FFFFFF !important;
+}
+
+.str-video__radio-button__input, .str-ui__radio-button__input {
+    border-color: #DEE2E6 !important;
+}
+
+.str-video__radio-button__input:checked {
+    background-color: #0D6EFD !important;
+    border-color: #0D6EFD !important;
+}
+
+.str-video__radio-button__label, .str-ui__radio-button__label {
+    color: #FFFFFF !important;
+}
+
+/* Ensure icons and other elements are white */
+.str-video i, .str-video svg, .str-ui__icon {
+    color: #FFFFFF !important;
+}
