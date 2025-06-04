@@ -36,7 +36,7 @@ const SideBar = () => {
   ];
 
   return (
-    <div className="space-y-4 py-4 flex flex-col h-full">
+    <div className="flex flex-col h-full">
       {/* Logo and Brand - Desktop */}
       <div className="px-3 py-2 hidden md:block border-b border-gray-200">
         <Link href="/" className="flex items-center space-x-3 mb-4">
@@ -73,20 +73,19 @@ const SideBar = () => {
       </div>
 
       {/* Mobile Navigation */}
-      <div className="md:hidden flex justify-around w-full">
+      <div className="md:hidden grid grid-cols-4 w-full h-11">
         {routes.map((route) => (
           <Link
             key={route.href}
             href={route.href}
             className={cn(
-              "flex flex-col items-center justify-center p-2 text-xs",
+              "flex items-center justify-center border-t transition-colors",
               pathname === route.href
-                ? "text-white"
-                : "text-zinc-400 hover:text-white"
+                ? "border-blue-500 text-blue-500"
+                : "border-transparent text-gray-500 hover:text-blue-500"
             )}
           >
-            <i className={cn("bi", route.icon, "text-lg mb-1", route.color)} />
-            <span>{route.label}</span>
+            <i className={cn("bi", route.icon, "text-base", route.color)} />
           </Link>
         ))}
       </div>

@@ -25,12 +25,15 @@ const RootLayout = ({ children }: RootLayoutProps) => {
         {/* Page Content */}
         <div className="h-full p-4 md:p-8">
           <SteamProvider>{children}</SteamProvider>
+          <div className="fixed bottom-4 right-4 text-sm text-gray-400">
+            © Kedar Kulkarni
+          </div>
         </div>
       </main>
 
       {/* Mobile Navigation - Bottom bar on mobile */}
       <div className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800">
-        <div className="flex justify-around items-center h-16">
+        <div className="max-w-screen-sm mx-auto">
           <SideBar />
         </div>
       </div>

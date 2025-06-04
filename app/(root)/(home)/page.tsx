@@ -99,7 +99,7 @@ const Home = () => {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="absolute top-8 left-8 z-20 bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20"
+            className="absolute top-8 left-8 z-20 bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20 md:w-auto w-[calc(100%-8rem)]"
           >
             <motion.h2 
               initial={{ opacity: 0, scale: 0.9 }}
@@ -128,12 +128,12 @@ const Home = () => {
           >
             <Button 
               onClick={() => router.push("/recordings")}
-              className="relative bg-white/90 text-gray-800 hover:bg-white px-6 py-3 text-sm flex items-center gap-2 group transition-all duration-300 hover:shadow-lg rounded-lg overflow-hidden border border-white/20"
+              className="relative bg-white/90 text-gray-800 hover:bg-white px-3 md:px-6 py-3 text-sm flex items-center gap-2 group transition-all duration-300 hover:shadow-lg rounded-lg overflow-hidden border border-white/20"
             >
               <div className="w-8 h-8 rounded-lg bg-blue-50 flex items-center justify-center group-hover:bg-blue-100 transition-colors duration-300">
                 <i className="bi bi-record-circle text-lg text-blue-600"></i>
               </div>
-              <span className="font-medium text-gray-700">View Recordings</span>
+              <span className="font-medium text-gray-700 hidden md:inline">View Recordings</span>
             </Button>
           </motion.div>
           
@@ -144,10 +144,10 @@ const Home = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
-                className="mb-12 text-center mt-20"
+                className="mb-12 text-center mt-40 md:mt-20"
               >
                 <motion.h1 
-                  className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-8 bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300"
+                  className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-8 bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.3 }}

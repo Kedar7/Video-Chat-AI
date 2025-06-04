@@ -91,14 +91,12 @@ const MeetingCard = ({
     <section className="flex min-h-[258px] w-full flex-col justify-between rounded-[14px] bg-[#F8F9FA] px-5 py-8 xl:max-w-[568px]">
       <article className="flex flex-col gap-5">
         <i className={cn("bi text-2xl text-[#212529]", icon)} />
-        <div className="flex justify-between">
-          <div className="flex flex-col gap-2">
-            <h1 className="text-2xl font-bold text-[#212529]">{title}</h1>
-            {subTitle}
-          </div>
+        <div className="flex flex-col gap-2">
+          <h1 className="text-xl md:text-2xl font-bold text-[#212529] break-words">{title}</h1>
+          <div className="text-sm text-gray-600">{subTitle}</div>
         </div>
       </article>
-      <article className={cn("flex justify-center relative", {})}>
+      <article className="mt-6">
         {bottomSlot}
       </article>
       {children}
