@@ -19,7 +19,7 @@ const DataRow = ({
       <dt className="text-base font-medium text-sky-1 lg:text-xl xl:min-w-32">
         {title}:
       </dt>
-      <dd className="truncate text-sm font-bold max-sm:max-w-[320px] lg:text-xl">
+      <dd className="text-sm font-bold max-sm:max-w-[320px] lg:text-xl">
         {description}
       </dd>
     </div>
